@@ -106,3 +106,9 @@ A API utiliza um formato padronizado para todas as requisições:
 }
 ```
 
+---
+
+## Vídeo Pitch
+
+Assista à apresentação da aplicação e suas funcionalidades:
+👉 [Link para o vídeo](https://youtu.be/-SnBqjtpsWw)
