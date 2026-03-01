@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "Empresa X",
+    "responsavel": "João da Silva",
+    "municipio": "Florianópolis",
+    "segmento": "Tecnologia",
+    "contato": "48999999999",
+    "status": true
+  },
+  {
+    "nome": "Empresa Y",
+    "responsavel": "Maria da Silva",
+    "municipio": "São José",
+    "segmento": "Comércio",
+    "contato": "48988888888",
+    "status": true
+  }
+]
