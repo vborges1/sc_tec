@@ -4,7 +4,11 @@ import path from 'path'
 import { EmpreendimentosRepository } from '../repositories/empreendimentos.repository'
 import { Empreendimento } from '../../models/empreendimento'
 import { AppError } from '../errors/error'
-import { validateEmpreendimento, validateEmailUniqueness } from '../validations/empreendimento.validation'
+import {
+  validateEmpreendimento,
+  validateEmailUniqueness,
+  validateSegmento
+} from '../validations/empreendimento.validation'
 
 const empreendimentosRoutes = Router()
 const repository = new EmpreendimentosRepository()
