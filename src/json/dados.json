@@ -4,15 +4,15 @@
     "responsavel": "João da Silva",
     "municipio": "Florianópolis",
     "segmento": "Tecnologia",
-    "contato": "48999999999",
-    "status": true
+    "email": "joaosilva@teste.com",
+    "contato": "48999999999"
   },
   {
     "nome": "Empresa Y",
     "responsavel": "Maria da Silva",
     "municipio": "São José",
     "segmento": "Comércio",
-    "contato": "48988888888",
-    "status": true
+    "email": "mariasilva@teste.com",
+    "contato": "48988888888"
   }
 ]

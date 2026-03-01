@@ -1,98 +1,108 @@
-# MICROSERVICE - EMPREENDIMENTOS
+## MICROSERVICE - EMPREENDIMENTOS
 
-> Microserviço desenvolvido para gerenciamento de empreendimentos, permitindo cadastro, listagem, busca, edição e remoção. Implementado com Node.js, Express, TypeScript e SQLite.
-
----
-
-## Tecnologias Utilizadas
-
-- Node.js
-- Express
-- TypeScript
-- SQLite
-- better-sqlite3
+> Microserviço de gerenciamento de empreendimentos imobiliários, desenvolvido como parte do Desafio Prático de Software do processo seletivo da trilha de IA para DEVs do SC Téc. Implementa o ciclo completo de CRUD via API, com foco em performance e tipagem forte, utilizando Node.js, Express, TypeScript e SQLite.
 
 ---
 
-## Funcionalidades
+### Tecnologias Utilizadas
 
-O sistema permite:
-
-- Cadastrar novos empreendimentos  
-- Listar todos os registros  
-- Buscar empreendimento por ID  
-- Atualizar dados de um empreendimento  
-- Remover um empreendimento  
+- **Runtime:** Node.js
+- **Framework:** Express
+- **Linguagem:** TypeScript
+- **Banco de Dados:** SQLite (`better-sqlite3`)
+- **Utilitários:** Dotenv, CORS
 
 ---
 
-## Estrutura do Projeto
+### Funcionalidades
 
+O sistema permite a gestão completa dos dados:
+
+- **Cadastrar** novos empreendimentos
+- **Listar** todos os registros armazenados
+- **Buscar** um empreendimento específico por ID
+- **Atualizar** dados de um empreendimento existente
+- **Remover** registros do banco de dados
+
+---
+
+### Estrutura do Projeto
+
+A organização segue padrões de clean code e separação de responsabilidades:
+
+```text
 src/
-├─ infra/
-│ ├─ database/
-│ │ ├─ sqlite.ts
-│ │ └─ migrations.ts
-│ └─ router/
-│ ├─ index.ts
-│ └─ empreendimentos.routes.ts
-├─ models/
-│ └─ empreendimento.ts
-├─ repositories/
-│ └─ empreendimentos.repository.ts
-├─ log/
-│ └─ startup-banner.ts
-├─ server.ts
-└─ app.ts
-
-package.json
-tsconfig.json
-
-- **Routes** → Camada HTTP, define endpoints da API  
-- **Repository** → Camada de acesso ao banco de dados  
-- **Model** → Tipagem de dados com TypeScript  
-- **Infra** → Configurações de banco e roteamento  
-
----
-
-## Executando o projeto
-
-Instale as dependências e execute no modo desenvolvimento
-```
-    npm install
-    npm run dev
+├── infra/
+│   ├── bootstrap/
+│   │   └── bootstrap.ts
+│   ├── database/
+│   │   ├── migrations.ts
+│   │   ├── schema.sql
+│   │   └── sqlite.ts
+│   ├── errors/
+│   │   ├── error.ts
+│   ├── log/
+│   │   └── startup-banner.ts
+│   ├── repositories/
+│   │   └── empreendimentos.repository.ts
+│   ├── router/
+│   │   ├── empreendimentos.routes.ts
+│   │   └── index.ts
+│   └── validations/
+│       └── empreendimentos.validation.ts
+├── json/
+│   └── dados.json
+├── models/
+│   └── empreendimento.ts
+├── app.ts
+├── cors-config.ts
+└── server.ts
 ```
 
 ---
 
-## Padrão de Resposta da API
+### Executando o Projeto
 
-Sucesso
+Para rodar o microserviço localmente, siga os passos abaixo:
+
+1. **Instale as dependências:**
+```bash
+npm install
 ```
+
+
+2. **Configure o ambiente:**
+* Verifique o arquivo `.env.example` e crie o seu `.env`.
+
+
+3. **Inicie o servidor em modo de desenvolvimento:**
+```bash
+npm run dev
+```
+
+
+
+---
+
+### Padrão de Resposta da API
+
+A API utiliza um formato padronizado para todas as requisições:
+
+**Sucesso:**
+
+```json
 {
   "success": true,
-  "message": "Operação realizada com sucesso",
-  "data": {}
+  "message": "Descriçãp da operação bem sucedida"
 }
 ```
 
-Erro:
-```
+**Erro:**
+
+```json
 {
   "success": false,
-  "message": "Descrição do erro"
+  "error": "Descrição detalhada do erro ocorrido"
 }
 ```
 
-## Arquitetura
-
-Routes → Camada HTTP, define endpoints da API
-Repository → Camada de acesso ao banco de dados
-Model → Tipagem de dados com TypeScript
-Infra → Configurações de banco e roteamento
-
----
-
-## Vídeo Pitch
-
-Assista ao vídeo pitch da aplicação aqui: [Link para o vídeo](COLE_AQUI_O_LINK_DO_VIDEO)

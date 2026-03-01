@@ -1,15 +1,24 @@
 {
-  "name": "coordenadas",
-  "version": "1.0",
-  "description": "",
-  "main": "index.js",
+  "name": "sc-tec-api",
+  "version": "1.0.0",
+  "description": "Microserviço de gerenciamento de empreendimentos imobiliários com API CRUD usando Node.js, Express, TypeScript e SQLite",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "npx nodemon src/server.ts --watch 'src/' -e ts",
-    "compile": "npx tsc",
-    "start": "node ./dist/server.js"
+    "dev": "nodemon --watch 'src/' --ext ts --exec 'ts-node' src/server.ts",
+    "build": "tsc --project tsconfig.json",
+    "start": "node ./dist/server.js",
+    "lint": "eslint . --ext .ts",
+    "clean": "rm -rf dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "express",
+    "sqlite",
+    "api",
+    "crud"
+  ],
+  "author": "Vitor Borges",
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^12.6.2",
@@ -20,8 +29,7 @@
     "express": "^5.2.1",
     "figlet": "^1.10.0",
     "helmet": "^8.1.0",
-    "morgan": "^1.10.1",
-    "sqlite": "^5.1.1"
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
@@ -30,6 +38,7 @@
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
     "@types/node": "^24.7.2",
+    "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

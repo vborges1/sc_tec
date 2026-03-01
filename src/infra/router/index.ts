@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express'
 import { empreendimentosRoutes } from './empreendimentos.routes'
+import { AppError } from '../errors/error'
 
 const router = Router()
 
@@ -12,10 +13,18 @@ router.get('/', (req: Request, res: Response) => {
 router.use('/empreendimentos', empreendimentosRoutes)
 
 router.use((error: Error, req: Request, res: Response, next: NextFunction) => {
-  console.error(error)
+  if (error instanceof AppError) {
+    res.status(error.statusCode).json({
+      success: false,
+      error: error.message
+    })
+
+    return
+  }
 
   res.status(500).json({
-    message: error.message || 'Erro interno no servidor'
+    success: false,
+    error: 'Erro interno no servidor'
   })
 })
 
