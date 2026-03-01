@@ -6,7 +6,7 @@
 
 ### Tecnologias Utilizadas
 
-- **Runtime:** Node.js
+- **Runtime:** NodeJS
 - **Framework:** Express
 - **Linguagem:** TypeScript
 - **Banco de Dados:** SQLite (`better-sqlite3`)
@@ -93,7 +93,7 @@ A API utiliza um formato padronizado para todas as requisições:
 ```json
 {
   "success": true,
-  "message": "Descriçãp da operação bem sucedida"
+  "message": "Descrição da operação bem sucedida"
 }
 ```
 
